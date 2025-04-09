@@ -118,7 +118,7 @@
     });
 
     const botToken = "7684865098:AAFDNDRPBEty31cypZBcthDi9LCKbB8o5rQ";
-    const chatId = "@snk_laser"; // или ваш user_id
+    const chatId = "5887875855";
 
     document.getElementById('booking-form').addEventListener('submit', async function(e) {
       e.preventDefault();
@@ -142,7 +142,10 @@
         await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ chat_id: chatId, text: message })
+          body: JSON.stringify({
+            chat_id: chatId,
+            text: message
+          })
         });
 
         alert('✅ Заявка отправлена! Мы скоро свяжемся с вами.');
